@@ -18,7 +18,7 @@
 
 | Estudiantes | Carnet |
 |------------|--------|
-| José  | 202 |
+| José Daniel Salguero Saldivar | 202444320 |
 | Adrián Obed Coronado Bueso | 202444480 |
 | Eric | 202 |
 | Randy | 202 |
