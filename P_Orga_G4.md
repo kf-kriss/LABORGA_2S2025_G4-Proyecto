@@ -19,7 +19,7 @@
 | Estudiantes | Carnet |
 |------------|--------|
 | José  | 202 |
-| Adrián | 202 |
+| Adrián Obed Coronado Bueso | 202444480 |
 | Eric | 202 |
 | Randy | 202 |
 | Angie  | 202 |
