@@ -41,6 +41,18 @@ Además, el sistema incorpora comunicación Bluetooth mediante un módulo HC-06,
 
 ---
 
+## Descripción del problema
+
+En las viviendas tradicionales, el control de la iluminación, ventilación y acceso se realiza de forma manual, lo que limita la eficiencia, comodidad y automatización del hogar. Cada dispositivo debe ser operado de manera independiente, lo que genera mayor consumo de tiempo y una menor integración entre los sistemas eléctricos.
+
+Además, no existe una forma centralizada de controlar los diferentes ambientes de una vivienda, ni de mantener configuraciones personalizadas que puedan conservarse después de un corte de energía. Esto hace que el usuario deba reconfigurar manualmente el sistema cada vez que se reinicia.
+
+También se identifica la falta de sistemas accesibles que permitan el control remoto de los dispositivos del hogar, ya que en muchos casos se requiere interacción física directa con interruptores o controles individuales.
+
+Por esta razón, se propone el desarrollo de una maqueta de casa inteligente basada en Arduino, que permita automatizar el control de luces por ambientes, la ventilación y la apertura de puertas, integrando comunicación inalámbrica mediante Bluetooth y almacenamiento de configuraciones en memoria EEPROM, con el objetivo de simular un sistema domótico funcional y eficiente.
+
+---
+
 ## Objetivos
 
 ### General
@@ -54,6 +66,18 @@ Diseñar e implementar un sistema de casa inteligente funcional utilizando Ardui
 - Almacenar configuraciones en memoria EEPROM.   
 - Controlar actuadores como servomotores.  
 - Mostrar estados del sistema en pantalla LCD I2C.
+
+---
+
+## Lógica del sistema
+
+El sistema *SmartHome GT* funciona a partir de una lógica centralizada en la cual el Arduino UNO actúa como el controlador principal de toda la maqueta. Este se encarga de recibir, interpretar y ejecutar las diferentes instrucciones que permiten el funcionamiento de la casa inteligente.
+
+Las órdenes pueden enviarse desde una computadora mediante comunicación serial o de forma inalámbrica a través del módulo Bluetooth HC-06. A partir de estos comandos, el sistema puede activar distintos modos de operación, controlar los ambientes de la vivienda o ejecutar configuraciones personalizadas almacenadas en la memoria EEPROM.
+
+Cuando el Arduino recibe una instrucción válida, procesa la información y realiza las acciones correspondientes, como encender o apagar las luces de cada ambiente, controlar el ventilador o mover el servomotor que representa la puerta. Al mismo tiempo, se actualiza la pantalla LCD para mostrar al usuario el estado actual del sistema.
+
+El funcionamiento se organiza en distintos modos, los cuales determinan el comportamiento de todos los dispositivos al mismo tiempo. De esta forma, cada modo define una combinación específica de luces, ventilador y demás componentes, logrando una operación coordinada y automática de toda la maqueta.
 
 ---
 
@@ -72,6 +96,20 @@ El sistema integra los siguientes elementos principales:
 
 <img width="1542" height="848" alt="image" src="https://github.com/user-attachments/assets/76411e05-7b45-4d80-b581-b3c13aaffdcd" />
 
+
+---
+
+## Funciones booleanas
+
+El sistema *SmartHome GT* puede representarse mediante funciones booleanas, ya que cada salida del sistema solo puede tener dos estados posibles: encendido (1) o apagado (0). Esto permite simplificar el comportamiento de cada uno de los elementos del sistema dentro de la lógica digital.
+
+Cada ambiente de la vivienda se define como una variable booleana independiente. De esta forma, la sala (S), comedor (C), cocina (K), baño (B), habitación (H) y el ventilador (V) pueden tomar valores de 0 o 1 dependiendo del modo seleccionado.
+
+Los diferentes modos del sistema se representan como combinaciones de estas variables. Por ejemplo, en el modo “encender todo”, todas las variables toman valor de 1, mientras que en el modo “apagar todo”, todas las salidas se establecen en 0. En el modo “relajado” y “noche”, todas las luces y el ventilador se mantienen apagados.
+
+En el modo “fiesta”, las salidas de iluminación cambian de forma secuencial, lo que puede representarse como una función de activación alternada entre los ambientes, mientras el ventilador permanece encendido. Los modos personalizados almacenados en la memoria EEPROM también corresponden a combinaciones específicas de estas variables.
+
+En general, el sistema puede expresarse como un conjunto de funciones booleanas donde cada salida depende directamente del estado del modo activo, permitiendo una representación clara del comportamiento lógico del sistema domótico.
 
 ---
 
@@ -102,6 +140,26 @@ El sistema SmartHome GT utiliza la memoria EEPROM del Arduino para almacenar de 
 El uso de la memoria EEPROM permite que el sistema recupere automáticamente la última configuración utilizada, brindando mayor estabilidad y autonomía al sistema de casa inteligente.
 
 ---
+
+## Configuración Bluetooth
+
+El sistema *SmartHome GT* utiliza un módulo Bluetooth HC-06 para permitir la comunicación inalámbrica entre el usuario y la maqueta. Este módulo se conecta al Arduino UNO mediante comunicación serial, utilizando los pines de transmisión (TX) y recepción (RX).
+
+La configuración del Bluetooth permite el envío de comandos desde un dispositivo móvil mediante una aplicación de terminal Bluetooth. Estos comandos son interpretados por el Arduino para ejecutar acciones específicas dentro del sistema, como el control de luces por ambiente, la activación de modos predefinidos o el manejo del ventilador y la puerta.
+
+Entre los comandos principales que el sistema reconoce se encuentran: `modo_fiesta`, `modo_relajado`, `modo_noche`, `encender_todo`, `apagar_todo`, así como los modos personalizados `modo_custom_1` y `modo_custom_2` almacenados en la memoria EEPROM.
+
+La comunicación es en tiempo real, por lo que cada comando recibido es procesado inmediatamente, actualizando el estado del sistema y mostrando la información correspondiente en la pantalla LCD. Además, el sistema envía una respuesta de confirmación al dispositivo móvil para indicar que la acción se ejecutó correctamente.
+
+---
+
+## Equipo y componentes utilizados
+
+| Tipo | Elementos |
+|------|----------|
+| Componentes electrónicos | Arduino UNO, Módulo Bluetooth HC-06, Pantalla LCD 16x2 I2C, Servomotor, Motor DC, LEDs, Resistencias 220Ω, Transistor NPN (2N2222), Cables jumper, Protoboard |
+| Materiales de maqueta | Cartón, silicón caliente, pinturas / acuarelas, cartulina, elementos decorativos |
+| Herramientas de desarrollo | Arduino IDE, Proteus, editor de texto, App Bluetooth Terminal |
 
 ## Presupuesto 
 
@@ -148,7 +206,13 @@ Por último, el desarrollo del proyecto contribuyó al fortalecimiento de habili
 
 ---
 
+## Anexos
 
+### Explicación y cortometraje
+https://youtu.be/or0pGBAJmtU?si=cD5MwrecTMHobJ4A 
+
+### Soundtrack
+https://www.youtube.com/watch?v=ZyhrYis509A&list=RDZyhrYis509A&start_radio=1
 
 ---
 
