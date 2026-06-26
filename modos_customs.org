@@ -1,0 +1,11 @@
+conf_ini
+// Primer modo
+MODO_CUSTOM: "SEXO"
+VENTILADOR: ON
+LED'S: sala:OFF, comedor:OFF, cocina:ON, bano:ON, habitacion:ON
+
+// Segundo modo (se guardará automáticamente en la EEPROM 2)
+MODO_CUSTOM: "Noche"
+VENTILADOR: OFF
+LED'S: sala:OFF, comedor:OFF, cocina:OFF, bano:OFF, habitacion:ON
+conf:fin
