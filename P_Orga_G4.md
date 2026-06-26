@@ -20,7 +20,7 @@
 |------------|--------|
 | José Daniel Salguero Saldivar | 202444320 |
 | Adrián Obed Coronado Bueso | 202444480 |
-| Eric | 202 |
+| Eric Esteban Ramos Sagastume | 202445229 |
 | Randy Xavier Lone Peñate | 202341660 |
 | Angie  | 202 |
 | Kristhoper Franklin Ucelo Pirir | 202502428 |
