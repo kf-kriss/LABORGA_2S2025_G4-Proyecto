@@ -136,6 +136,19 @@ El uso de la memoria EEPROM permite que el sistema recupere automáticamente la 
 [Ver video](./SmartHouse_Finalizado.mp4)
 [Ver video](./SmartHouse_Funcionamiento.mp4)
 
+---
+
+## Conclusiones
+
+El proyecto *SmartHome GT* permitió aplicar de forma práctica distintos conceptos vistos en el curso, como la lógica digital, la programación en Arduino y el uso de sistemas embebidos. Mediante la construcción de una maqueta funcional, se logró representar una vivienda inteligente capaz de controlar luces, ventilación y acceso de manera automatizada.
+
+Asimismo, se destacó la utilidad de la memoria EEPROM para conservar la configuración del sistema, lo que garantiza que los modos de funcionamiento se mantengan guardados incluso después de un reinicio. De igual forma, el uso de comunicación Bluetooth facilitó el control remoto, demostrando la importancia de las tecnologías inalámbricas en sistemas de automatización modernos.
+
+Por último, el desarrollo del proyecto contribuyó al fortalecimiento de habilidades técnicas como el diseño de circuitos, la programación estructurada y la integración de hardware con software. Esto permitió comprender mejor el funcionamiento de sistemas electrónicos reales, logrando una solución funcional, estable y adaptable a diferentes condiciones de uso.
+
+---
+
+
 
 ---
 
