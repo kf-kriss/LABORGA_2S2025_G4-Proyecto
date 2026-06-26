@@ -131,6 +131,11 @@ El uso de la memoria EEPROM permite que el sistema recupere automáticamente la 
 
 ### Terminado
 
+<img width="375" height="496" alt="image" src="https://github.com/user-attachments/assets/aae18481-6d69-4d32-8382-6984b60d9af8" />
+
+[Ver video](./SmartHouse_Finalizado.mp4)
+[Ver video](./SmartHouse_Funcionamiento.mp4)
+
 
 ---
 
