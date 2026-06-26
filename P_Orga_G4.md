@@ -27,7 +27,7 @@
 
 ---
 
-**Fecha:** Viernes 25 de Junio del 2026  
+**Fecha:** Viernes 26 de Junio del 2026  
 
 ---
 
@@ -75,7 +75,31 @@ El sistema integra los siguientes elementos principales:
 
 ---
 
+## Explicación del formato `.org`
 
+- `conf_ini`: indica el inicio del archivo de configuración.
+- `MODO_CUSTOM`: define el nombre del modo.
+- `VENTILADOR`: indica el estado del motor (ON/OFF).
+- `LED'S`: define el estado de cada ambiente de la casa.
+- `conf:fin`: indica el final del archivo.
+
+Este formato permite almacenar múltiples configuraciones en un solo archivo y facilita su interpretación dentro del sistema embebido.
+
+---
+
+## Tabla de direcciones de EEPROM (cómo se almacenan los modos)
+
+El sistema SmartHome GT utiliza la memoria EEPROM del Arduino para almacenar de forma permanente la configuración de los diferentes modos de funcionamiento. Esto permite que la información no se pierda al apagar o reiniciar el sistema, manteniendo guardados los estados de los ambientes, el ventilador y la configuración general del sistema.
+
+### Asignación de memoria EEPROM
+
+| Dirección EEPROM | Datos almacenados |
+|------------------|------------------|
+| 0   | Estado global del sistema (último modo activo y configuración general) |
+| 100 | Modo personalizado 1 (nombre, estados de luces y ventilador) |
+| 120 | Modo personalizado 2 (nombre, estados de luces y ventilador) |
+
+El uso de la memoria EEPROM permite que el sistema recupere automáticamente la última configuración utilizada, brindando mayor estabilidad y autonomía al sistema de casa inteligente.
 
 ---
 
@@ -93,5 +117,23 @@ El sistema integra los siguientes elementos principales:
 | Otros materiales | — | — | 20.00 |
 
 **Total general: Q224.00**
+
+---
+
+## Fotos
+### Durante el desarrollo del proyecto
+
+<img width="1285" height="auto" alt="image" src="https://github.com/user-attachments/assets/48be868e-1e94-42d8-9e61-c8524cec7389" />
+
+<img width="2000" height="1600" alt="Beige   Grey Aesthetic Moodboard Photo Collage" src="https://github.com/user-attachments/assets/ac7c122c-87c0-47e9-9904-6a9bc8c12215" />
+
+<img width="2000" height="auto" alt="Neutral Earthy Clean Grid Photography Photo Collage Facebook Cover" src="https://github.com/user-attachments/assets/f4113e15-d2b1-4761-a03c-68a56040a539" />
+
+### Terminado
+
+
+---
+
+
 
 ---
